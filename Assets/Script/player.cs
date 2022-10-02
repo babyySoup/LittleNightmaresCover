@@ -26,8 +26,7 @@ public class player : MonoBehaviour
 
     public GameObject FullQueen;
     public GameObject FullFlat;
-    RedoChess QueenUndo;
-    RedoChess FlatUndo;
+    
 
 
     public void OnTriggerStay(Collider other)
@@ -43,9 +42,14 @@ public class player : MonoBehaviour
             {
                 Debug.Log(other);
                 //Destroy(other.gameObject);
-                FlatUndo.UndoFlat();
+                //FlatUndo.UndoFlat();
 
-
+                RedoChess chessCode = other.GetComponent<RedoChess>();
+                
+                if(chessCode != null)
+                {
+                    chessCode.UndoFlat();
+                }
 
             }
         }
@@ -53,15 +57,17 @@ public class player : MonoBehaviour
 
 
 
-        if (other.CompareTag("FullQueen"))
+        if (other.gameObject.CompareTag("FullQueen"))
         {
 
             if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("redoing the queen chess");
-                //Destroy(other.gameObject);
-                QueenUndo.UndoQueen();
+                RedoChess chessCode = other.GetComponent<RedoChess>();
 
+                if (chessCode != null)
+                {
+                    chessCode.UndoQueen();
+                }
             }
         }
 
@@ -74,8 +80,7 @@ public class player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         handsEmpty = true;
 
-        QueenUndo = FullQueen.GetComponent<RedoChess>();
-        FlatUndo = FullFlat.GetComponent<RedoChess>();
+        
 
     }
     void Update()

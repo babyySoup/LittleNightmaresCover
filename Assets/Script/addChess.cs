@@ -11,6 +11,10 @@ public class addChess : MonoBehaviour
 
     public bool canAdd = true;
 
+    player playerCode;
+    public GameObject player;
+
+
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -54,9 +58,13 @@ public class addChess : MonoBehaviour
             {
                 Debug.Log("making a full chess!");
                 GameObject QueenChess = Instantiate(ChessQueen, transform.position, Quaternion.identity) as GameObject;
+                QueenChess = playerCode.FullQueen;
+
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
                 canAdd = false;
+
+                
             }
         }
     }
@@ -65,5 +73,10 @@ public class addChess : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Start()
+    {
+        playerCode = GameObject.Find("player").GetComponent<player>();
     }
 }

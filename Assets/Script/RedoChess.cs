@@ -21,6 +21,8 @@ public class RedoChess : MonoBehaviour
             Debug.Log("redoing the queen chess");
             GameObject NewBottom = Instantiate(ChessBottom, transform.position, Quaternion.identity) as GameObject;
             GameObject NewTop = Instantiate(QueenTop, transform.position, Quaternion.identity) as GameObject;
+            
+            
             canUndoQueen = false;
             Destroy(gameObject);
         }
@@ -29,26 +31,21 @@ public class RedoChess : MonoBehaviour
 
     public void UndoFlat()
     {
-        Debug.Log("1");
-        Destroy(gameObject);
-        Instantiate(ChessBottom2, transform.position, Quaternion.identity);
+        if (canUndoFlat == true)
+        {
+            Debug.Log("1");
 
-        Instantiate(FlatTop, transform.position, Quaternion.identity);
+            //DestroyImmediate(gameObject, true);
 
-        canUndoFlat = false;
-        Debug.Log("redoing the flat chess");
-        Destroy(gameObject);
+            Instantiate(ChessBottom2, transform.position, Quaternion.identity);
 
+            Instantiate(FlatTop, transform.position, Quaternion.identity);
 
-
-        //if (canUndoFlat)
-        //{
-
-        //    Debug.Log("1");
-        //    GameObject NewBottom1 = Instantiate(ChessBottom2, transform.position, Quaternion.identity) as GameObject;
-        //    GameObject NewTop1 = Instantiate(FlatTop, transform.position, Quaternion.identity) as GameObject;
-        //    canUndoFlat = false;
-        //}
+            canUndoFlat = false;
+            Debug.Log("redoing the flat chess");
+            Destroy(gameObject);
+        }
+        
     }
 
 
