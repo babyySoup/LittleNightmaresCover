@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    //Door door;
+    //undo chess 
+
+    public GameObject QueenTop;
+    public GameObject FlatTop;
+
 
     public float speed;
     public float rotationSpeed;
@@ -20,32 +24,45 @@ public class player : MonoBehaviour
     public Item[] Inventory;
     public int currentItemIndex;
 
+    public GameObject FullQueen;
+    public GameObject FullFlat;
+    RedoChess QueenUndo;
+    RedoChess FlatUndo;
 
-    public void OnCollisionEnter(Collision collision)
+
+    public void OnTriggerStay(Collider other)
     {
         //on mouse click 
         //intiate two diff game object - bottom and top 
         //delete full chess gameobject
         //parent the top(item) to the player 
 
-        if (collision.gameObject.CompareTag("FullFlat"))
+        if (other.gameObject.CompareTag("FullFlat"))
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log(other);
+                //Destroy(other.gameObject);
+                FlatUndo.UndoFlat();
 
+
+
+            }
         }
 
-        if (collision.gameObject.CompareTag("FullCrossW"))
+
+
+
+        if (other.CompareTag("FullQueen"))
         {
 
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("redoing the queen chess");
+                //Destroy(other.gameObject);
+                QueenUndo.UndoQueen();
 
-        if (collision.gameObject.CompareTag("FullCrossB"))
-        {
-
-        }
-
-        if (collision.gameObject.CompareTag("FullQueen"))
-        {
-
+            }
         }
 
     }
@@ -57,7 +74,9 @@ public class player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         handsEmpty = true;
 
-        //door = GameObject.Find("Door").GetComponent<Door>();
+        QueenUndo = FullQueen.GetComponent<RedoChess>();
+        FlatUndo = FullFlat.GetComponent<RedoChess>();
+
     }
     void Update()
     {   

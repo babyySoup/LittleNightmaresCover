@@ -9,6 +9,8 @@ TagManager:
   - CrossTop
   - QueenTop
   - CrossTopB
+  - FullQueen
+  - FullFlat
   layers:
   - Default
   - TransparentFX

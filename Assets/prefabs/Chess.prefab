@@ -459,9 +459,11 @@ GameObject:
   - component: {fileID: 6394523214191625395}
   - component: {fileID: 1883072627}
   - component: {fileID: 1883072628}
+  - component: {fileID: -1735887732047894519}
+  - component: {fileID: 1271928944685343356}
   m_Layer: 0
   m_Name: Chess
-  m_TagString: Untagged
+  m_TagString: FullFlat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6394523214191625394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.83, y: 2.13, z: 26.33}
+  m_LocalPosition: {x: 0, y: 2.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -512,6 +514,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7471241, y: 0.96762717, z: 0.7835703}
   m_Center: {x: -0.043314993, y: -0.38697726, z: 0.03177786}
+--- !u!114 &-1735887732047894519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394523214191625394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05843194d37f1b64ba432a95468abf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUndoQueen: 1
+  canUndoFlat: 0
+  ChessBottom: {fileID: 1703929771039699656, guid: 85edb03ca2ecf714496927d8495c1a37, type: 3}
+  ChessBottom2: {fileID: 1703929771039699656, guid: 85edb03ca2ecf714496927d8495c1a37, type: 3}
+  QueenTop: {fileID: 7888903324150766942, guid: dd8ecb163c5dc4446a40fb3cac80b516, type: 3}
+  FlatTop: {fileID: 4643248098419384814, guid: 49ecd0448ba23a34c86fd8c0e5c506f8, type: 3}
+--- !u!65 &1271928944685343356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394523214191625394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 1, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6394523214373084573
 GameObject:
   m_ObjectHideFlags: 0
