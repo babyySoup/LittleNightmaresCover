@@ -11,6 +11,8 @@ public class LampTrigger : MonoBehaviour
     public GameObject CF;
     public GameObject QF;
 
+    public GameObject Light;
+
     public GameObject shelfDoor;
     ShelfDoor sdCode;
     FlatFloor flatFloor;
@@ -32,6 +34,7 @@ public class LampTrigger : MonoBehaviour
         if (flatFloor.FlatInPlace == true && crossFloor.CrossInPlace == true && queenFloor.queenInPlace == true)
         {
             completed = true;
+            Light.SetActive(true);
             Debug.Log("puzzle complete");
         }
     }
