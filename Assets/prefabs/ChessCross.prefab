@@ -739,10 +739,11 @@ GameObject:
   - component: {fileID: 4867187417337396816}
   - component: {fileID: 5605953703266122032}
   - component: {fileID: 1741444123249832095}
-  - component: {fileID: 3879190478664496963}
+  - component: {fileID: 1852316802350088152}
+  - component: {fileID: 2039355143}
   m_Layer: 0
   m_Name: ChessCross
-  m_TagString: Untagged
+  m_TagString: FullCross
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,7 +794,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7471241, y: 0.96762717, z: 0.7835703}
   m_Center: {x: -0.043314993, y: -0.38697726, z: 0.03177786}
---- !u!114 &3879190478664496963
+--- !u!65 &1852316802350088152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607082551677733104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.4, z: 1.2}
+  m_Center: {x: 0, y: -0.43, z: 0}
+--- !u!114 &2039355143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,11 +816,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8607082551677733104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc7ae31ee56f614c8420218f5a10091, type: 3}
+  m_Script: {fileID: 11500000, guid: 05843194d37f1b64ba432a95468abf63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: []
-  currentItemIndex: 0
+  canUndoQueen: 1
+  canUndoFlat: 1
+  canUndoCross: 1
+  ChessBottom: {fileID: 1703929771039699656, guid: 85edb03ca2ecf714496927d8495c1a37, type: 3}
+  QueenTop: {fileID: 7888903324150766942, guid: dd8ecb163c5dc4446a40fb3cac80b516, type: 3}
+  FlatTop: {fileID: 4643248098419384814, guid: 49ecd0448ba23a34c86fd8c0e5c506f8, type: 3}
+  CrossTop: {fileID: 8607082551677733104, guid: f941acc0283d7d949bc4275e0a1c38e9, type: 3}
 --- !u!1 &8919920358452785991
 GameObject:
   m_ObjectHideFlags: 0

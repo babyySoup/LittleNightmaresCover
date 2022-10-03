@@ -71,6 +71,20 @@ public class player : MonoBehaviour
             }
         }
 
+        if (other.gameObject.CompareTag("FullCross"))
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                RedoChess chessCode = other.GetComponent<RedoChess>();
+
+                if (chessCode != null)
+                {
+                    chessCode.UndoCross();
+                }
+            }
+        }
+
     }
 
 

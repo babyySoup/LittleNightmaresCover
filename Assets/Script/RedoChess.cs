@@ -6,12 +6,13 @@ public class RedoChess : MonoBehaviour
 {
     public bool canUndoQueen = true;
     public bool canUndoFlat = true;
+    public bool canUndoCross = true;
 
     public GameObject ChessBottom;
-    public GameObject ChessBottom2;
 
     public GameObject QueenTop;
     public GameObject FlatTop;
+    public GameObject CrossTop;
 
 
     public void UndoQueen()
@@ -21,8 +22,8 @@ public class RedoChess : MonoBehaviour
             Debug.Log("redoing the queen chess");
             GameObject NewBottom = Instantiate(ChessBottom, transform.position, Quaternion.identity) as GameObject;
             GameObject NewTop = Instantiate(QueenTop, transform.position, Quaternion.identity) as GameObject;
-            
-            
+
+
             canUndoQueen = false;
             Destroy(gameObject);
         }
@@ -37,7 +38,7 @@ public class RedoChess : MonoBehaviour
 
             //DestroyImmediate(gameObject, true);
 
-            Instantiate(ChessBottom2, transform.position, Quaternion.identity);
+            Instantiate(ChessBottom, transform.position, Quaternion.identity);
 
             Instantiate(FlatTop, transform.position, Quaternion.identity);
 
@@ -45,9 +46,26 @@ public class RedoChess : MonoBehaviour
             Debug.Log("redoing the flat chess");
             Destroy(gameObject);
         }
-        
+
     }
 
+    public void UndoCross()
+    {
+        if (canUndoCross == true)
+        {
+            Debug.Log("1");
+
+            //DestroyImmediate(gameObject, true);
+
+            Instantiate(ChessBottom, transform.position, Quaternion.identity);
+
+            Instantiate(CrossTop, transform.position, Quaternion.identity);
+
+            canUndoCross = false;
+            Debug.Log("redoing the cross chess");
+            Destroy(gameObject);
+        }
+    }
 
 
     void Start()
@@ -58,6 +76,7 @@ public class RedoChess : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 }
